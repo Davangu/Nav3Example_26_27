@@ -35,10 +35,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ScaffoldScreen() {
+fun ScaffoldScreen(title:String) {
     var index by rememberSaveable { mutableIntStateOf(0) }
     Scaffold(
-        topBar = { MyTopAppBar() },
+        topBar = { MyTopAppBar(title) },
         content = { innerPadding ->
             MyContent(innerPadding, index)
         },
@@ -50,9 +50,9 @@ fun ScaffoldScreen() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MyTopAppBar() {
+fun MyTopAppBar(title: String) {
     TopAppBar(
-        title = { Text("Top App Bar") },
+        title = { Text(title) },
         colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.LightGray),
         navigationIcon = {
             IconButton(onClick = { }) {

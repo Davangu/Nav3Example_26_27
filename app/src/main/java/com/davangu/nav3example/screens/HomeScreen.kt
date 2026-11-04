@@ -19,7 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun HomeScreen(navToDetail: (String) -> Unit) {
+fun HomeScreen(navToDetail: (Int) -> Unit) {
     val scroll = rememberScrollState()
     Column(modifier = Modifier
         .fillMaxSize()
@@ -32,7 +32,7 @@ fun HomeScreen(navToDetail: (String) -> Unit) {
                 modifier = Modifier.height(30.dp)
                     .fillMaxWidth()
                     .border(width = 2.dp, color = Color.Black)
-                    .clickable { navToDetail("El id es: $i") }
+                    .clickable { navToDetail(i) }
             ) {
                 Text(modifier = Modifier
                     .align(Alignment.CenterHorizontally)

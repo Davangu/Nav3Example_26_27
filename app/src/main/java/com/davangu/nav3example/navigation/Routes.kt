@@ -6,6 +6,13 @@ import kotlinx.serialization.Serializable
 sealed class Routes: NavKey {
     @Serializable
     data object Home:Routes()
+
     @Serializable
-    data class Detail(val id: String):Routes()
+    data object Menu:Routes()
+
+    @Serializable
+    data class Detail(val id: Int):Routes()
+
+    @Serializable
+    data class Scaffold(val title: String):Routes()
 }

@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun DetailScreen(id:String) {
+fun DetailScreen(id:Int) {
     Box(modifier = Modifier
         .fillMaxSize()
         .padding(vertical = 48.dp, horizontal = 24.dp),
