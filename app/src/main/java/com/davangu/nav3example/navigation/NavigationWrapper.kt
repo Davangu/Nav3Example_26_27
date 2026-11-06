@@ -1,6 +1,5 @@
 package com.davangu.nav3example.navigation
 
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
@@ -35,7 +34,10 @@ fun NavigationWrapper() {
                 }
                 // CON ARGUMENTOS DE ENTRADA
                 entry<Detail> { key ->
-                    DetailScreen(key.id)
+                    DetailScreen(key.id) {
+                        backStack.clear()
+                        backStack.add(Menu)
+                    }
                 }
 
                 entry<Scaffold> { key ->
